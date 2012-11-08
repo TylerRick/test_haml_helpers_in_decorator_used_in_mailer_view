@@ -8,9 +8,6 @@ class UserDecorator < Draper::Base
     Draper::ViewContext.current.class_eval do
       include Haml::Helpers
     end
-    Draper::ViewContext.current.instance_eval do
-      init_haml_helpers
-    end
 
     Rails.logger.debug %(... Draper::ViewContext.current.class.ancestors=#{(Draper::ViewContext.current.class.ancestors).pretty_inspect.indent(4)})
     Rails.logger.debug %(... Draper::ViewContext.current.method(:capture_haml)=#{(Draper::ViewContext.current.method(:capture_haml)).inspect rescue $!.inspect})
