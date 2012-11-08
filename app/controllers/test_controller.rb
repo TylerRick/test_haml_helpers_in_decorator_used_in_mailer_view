@@ -7,5 +7,6 @@ class TestController < ApplicationController
   def mail_with_haml_in_decorator
     @user = User.new
     TestMailer.mail_with_haml_in_decorator(@user).deliver
+    render text: 'Sent successfully'
   end
 end
